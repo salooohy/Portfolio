@@ -1,0 +1,333 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1f2e;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+    padding-top: 60px;
+}
+
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+/* Navigation Styles */
+/* Navigation Styles */
+.nav {
+    position: fixed; /* Fix the position of the nav bar */
+    top: 0; /* Position it at the top */
+    right: 0; /* Align to the right */
+    width: 100%; /* Full width of the screen */
+    background-color: #1a1f2e; /* Background color */
+    padding: 15px 0px; /* Padding for spacing */
+    z-index: 1000; /* Ensure it appears above other content */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Vertically center items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+}
+
+body.light-mode .nav {
+    background-color: #f0f0f0; /* Background color for light mode */
+}
+
+/* Navigation items styling */
+.nav-item {
+    display: inline-block; /* Keep items inline */
+    color: #a0a0a0;
+    margin-left: 20px; /* Space between items */
+    margin-right: 15px; /* Use this if items are too close to each other */
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.nav-item.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    color: #ffffff; /* Bright white color on hover */
+    transform: scale(1.1); /* Slightly increase the size on hover */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); /* Optional: Add a soft glow effect */
+}
+
+body.light-mode .nav-item.active {
+    color: #333333;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Section Styles */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* About Text */
+.about-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-text h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.about-text .highlight {
+    font-weight: bold;
+    color: #4fd1c5; /* Highlight color */
+}
+
+.about-text p {
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+
+/* About Image */
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    width: 350px; /* Adjust as necessary */
+    border-radius: 10px; /* Optional: add border-radius */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+
+    .about-image img {
+        width: 80%;
+    }
+}
+
+/* Section Styles */
+.section {
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+/* Experience Section */
+.job {
+    margin-bottom: 30px;
+}
+
+.job-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.job-date {
+    color: #a0a0a0;
+    font-size: 0.9em;
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background-color: #2a3040;
+    color: #4fd1c5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.light-mode .skill {
+    background-color: #e0e0e0;
+    color: #2a3040;
+}
+
+.skill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Button Styles */
+#mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4fd1c5;
+    color: #1a1f2e;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.light-mode #mode-toggle {
+    background-color: #2a3040;
+    color: #ffffff;
+}
+
+
+/* Experience Item Container */
+.experience-item {
+    background-color: #2a2e3b;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Header of Each Experience Item */
+.experience-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Company Logo Style */
+.company-logo {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%; /* Optional: add a circular shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow */
+}
+
+/* Information Container */
+.experience-info {
+    flex: 1;
+}
+
+/* Experience Info Styles */
+.experience-item h2 {
+    color: #4fd1c5;
+    margin-bottom: 5px;
+}
+
+.experience-item h3 {
+    color: #a0a0a0;
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.experience-item li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+
+/* Social Media Section Positioning */
+.social-media {
+    position: fixed; /* Fix the position relative to the viewport */
+    bottom: 20px; /* Position 20px from the bottom */
+    left: 20px; /* Position 20px from the left */
+    display: flex; /* Align the icons in a row */
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Social Link Styling */
+.social-link {
+    margin: 0 10px; /* Space between icons */
+}
+
+/* Social Icon Styling */
+.social-icon {
+    width: 32px; /* Set icon size */
+    height: 32px;
+    filter: brightness(0) invert(1); /* Make the icon white */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for color changes */
+}
+
+.social-icon:hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px #ffffff); /* Add a subtle glow on hover */
+}
+
+
+/* Resume Section Styling */
+.resume-section {
+    display: flex;
+    justify-content: center; /* Center the button */
+    align-items: center;
+    margin-top: 40px; /* Add space above the button */
+}
+
+/* Resume Link Styling */
+.resume-link {
+    text-decoration: none; /* Remove underline */
+}
+
+/* Resume Button Styling */
+.resume-button {
+    background-color: #4fd1c5; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.resume-button:hover {
+    background-color: #3baea0; /* Slightly darker on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}

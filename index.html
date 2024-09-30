@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio Website</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!-- Include typed.js library -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Create a new instance of Typed.js
+            var typed = new Typed('#typed-name', {
+                strings: ["", "Salih Al-Tak"], // Start with an empty string and then type your name
+                typeSpeed: 50,  // Typing speed in milliseconds
+                backSpeed: 30,  // Backspacing speed in milliseconds
+                startDelay: 500,  // Delay before typing starts
+                backDelay: 1000,  // Delay before starting to backspace
+                loop: false,  // Keep looping the animation
+                showCursor: true,  // Show the blinking cursor
+                cursorChar: "|",  // Character for the cursor
+                smartBackspace: false,  // Prevent smart backspace
+                loopCount: Infinity,  // Loop indefinitely
+            });
+        });
+    </script>
+    
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <a class="nav-item active" href="index.html">ABOUT</a> <!-- Link to the main about page -->
+        <a class="nav-item" href="experience.html">EXPERIENCE</a> <!-- Link to the new Experience page -->
+        <a class="nav-item" href="projects.html">PROJECTS</a> <!-- Link to projects page (if it exists) -->
+    </nav>
+    
+    <!-- Main Container -->
+
+   <!-- Social Media Section -->
+<div class="social-media">
+    </a>
+    <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
+        <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
+    </a>
+    <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
+        <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
+    </a>
+    <a href="mailto:salih.h.altak@gmail.com" class="social-link">
+        <img src="Icons/email.svg" alt="Email" class="social-icon">
+    </a>    
+</div>
+
+
+    <!-- Resume Section -->
+    <div class="resume-section">
+        <a href="documents/salih - resume.pdf" class="resume-link" target="_blank" download="Salih_Al-Tak_Resume.pdf">
+            <button class="resume-button">Download My Resume</button>
+        </a>
+    </div>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <!-- Text Content -->
+                <div class="about-text">
+                    <h1>Hi, my name is </h1>
+                    <h1><span class="highlight"><span id="typed-name">Salih Al-Tak</span></span></h1>
+                    <p>I'm an <span class="highlight"> curious, driven mechanical engineer</span> fueled by a passion for automation and smart systems, crafting innovative solutions that optimize processes and redefine what's possible.</p>
+                </div>
+                
+                <!-- Image -->
+                <div class="about-image">
+                    <img src="images/Profile pic.jpeg" alt="Your Image">
+                </div>
+            </div>
+        </section>
+
+
+    <script src="js/script.js"></script> <!-- Link to your JS file -->
+</body>
+</html>
