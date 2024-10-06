@@ -1,7 +1,6 @@
 // Smooth scrolling navigation
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', (e) => {
-        e.preventDefault();
         const sectionId = item.getAttribute('data-section');
         document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
 
