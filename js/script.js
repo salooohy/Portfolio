@@ -40,18 +40,35 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Initialize Typed.js when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-    // Create a new Typed instance and specify the target element and options
+    // Debugging the #typed-name instance
+    console.log("Typed.js for name initialized.");
     var typed = new Typed('#typed-name', {
-        strings: ["Salih Al-Tak", "A Mechanical Engineer", "Passionate about Automation", "Smart Systems Enthusiast"], // Array of strings to be typed
-        typeSpeed: 50, // Typing speed in milliseconds
-        backSpeed: 30, // Backspacing speed in milliseconds
-        startDelay: 500, // Delay before starting the typing effect (milliseconds)
-        backDelay: 1000, // Delay before starting to backspace (milliseconds)
-        loop: true, // Loop the typing effect
-        showCursor: true, // Display the typing cursor
-        cursorChar: "|", // Character for the cursor
-        smartBackspace: true, // Only backspace what doesn't match the next string in the array
+        strings: ["Salih Al-Tak", "A Mechanical Engineer", "Passionate about Automation", "Smart Systems Enthusiast"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        startDelay: 500,
+        backDelay: 1000,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+        smartBackspace: true
     });
+
+    // Debugging the #typed-skills instance
+    if (document.querySelector('#typed-skills')) {
+        console.log("Found #typed-skills element.");
+        var typedSkills = new Typed('#typed-skills', {
+            strings: ["Summary of Skills"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            startDelay: 300,
+            loop: false,
+            showCursor: true,
+            cursorChar: "|",
+            smartBackspace: true
+        });
+    } else {
+        console.log("Error: #typed-skills element not found.");
+    }
 });

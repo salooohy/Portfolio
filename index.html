@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Portfolio Website</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!-- Include typed.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+ <!-- Include typed.js library -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Create a new instance of Typed.js
@@ -28,27 +30,26 @@
 </head>
 <body>
     <!-- Navigation Bar -->
+     <!-- Social Media Icons -->
     <nav class="nav">
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
+                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
+                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
+            </a>
+            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
+                <img src="Icons/email.svg" alt="Email" class="social-icon">
+            </a>
+        </div>
+        
         <a class="nav-item active" href="index.html">ABOUT</a> <!-- Link to the main about page -->
         <a class="nav-item" href="experience.html">EXPERIENCE</a> <!-- Link to the new Experience page -->
         <a class="nav-item" href="projects.html">PROJECTS</a> <!-- Link to projects page (if it exists) -->
     </nav>
     
     <!-- Main Container -->
-
-   <!-- Social Media Section -->
-<div class="social-media">
-    </a>
-    <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-        <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-    </a>
-    <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-        <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-    </a>
-    <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-        <img src="Icons/email.svg" alt="Email" class="social-icon">
-    </a>    
-</div>
 
 
     <!-- Resume Section -->
@@ -79,3 +80,36 @@
     <script src="js/script.js"></script> <!-- Link to your JS file -->
 </body>
 </html>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <h1><span class="highlight"><span id="typed-name">Summary of Skills</span></span></h1><!-- Typed.js target here -->
+    <div class="skills-grid">
+        <div class="skill-item advanced">
+            <p>Solidworks</p>
+            <h2>Advanced</h2>
+        </div>
+        <div class="skill-item proficient">
+            <p>ANSYS</p>
+            <h2>Proficient</h2>
+        </div>
+        <div class="skill-item advanced">
+            <p>DFM / DFA</p>
+            <h2>Advanced</h2>
+        </div>
+        <div class="skill-item proficient">
+            <p>SQL</p>
+            <h2>Proficient</h2>
+        </div>
+        <div class="skill-item advanced">
+            <p>GD&T</p>
+            <h2>Advanced</h2>
+        </div>
+        <div class="skill-item proficient">
+            <p>Python</p>
+            <h2>Proficient</h2>
+        </div>
+    </div>
+</section>
+
+
