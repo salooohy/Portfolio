@@ -21,32 +21,37 @@ body.light-mode {
 
 /* Navigation Styles */
 .nav {
-    position: fixed; /* Fix the position of the nav bar */
-    top: 0; /* Position it at the top */
-    right: 0; /* Align to the right */
-    width: 100%; /* Full width of the screen */
-    background-color: #1a1f2e; /* Background color */
-    padding: 15px 0px; /* Padding for spacing */
-    z-index: 1000; /* Ensure it appears above other content */
-    display: flex; /* Use Flexbox for layout */
-    justify-content: flex-end; /* Align items to the right */
-    align-items: center; /* Vertically center items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    width: 100%; /* Full width */
+    background-color: #1a1f2e;
+    padding: 15px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Spread out nav items and social links */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
 }
 
 body.light-mode .nav {
-    background-color: #f0f0f0; /* Background color for light mode */
+    background-color: #f0f0f0;
 }
 
 /* Navigation items styling */
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between nav items */
+    margin-left: 20px; /* Space from left edge */
+}
+
 .nav-item {
-    display: inline-block; /* Keep items inline */
     color: #a0a0a0;
-    margin-left: 20px; /* Space between items */
-    margin-right: 15px; /* Use this if items are too close to each other */
     text-decoration: none;
     cursor: pointer;
     font-size: 1.1em;
+    transition: color 0.3s, transform 0.2s;
 }
 
 .nav-item.active {
@@ -55,31 +60,39 @@ body.light-mode .nav {
 }
 
 .nav-item:hover {
-    color: #ffffff; /* Bright white color on hover */
-    transform: scale(1.1); /* Slightly increase the size on hover */
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); /* Optional: Add a soft glow effect */
+    color: #ffffff;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 body.light-mode .nav-item.active {
     color: #333333;
 }
 
-/* Social Link Styling */
+/* Social Links positioned on the right */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between social icons */
+    margin-right: 20px; /* Space from right edge */
+}
+
 .social-link {
-    
-    margin-right: 1px;
+    display: inline-block;
 }
 
 .social-icon {
     width: 24px;
     height: 24px;
-    filter: brightness(0) invert(1); /* Make the icons white */
+    filter: brightness(0) invert(1);
     transition: filter 0.3s ease-in-out;
 }
 
 .social-icon:hover {
     filter: brightness(0) invert(1) drop-shadow(0 0 5px #ffffff);
 }
+
+
 /* Align Navigation Links to the Right */
 .nav-links {
     display: flex;
