@@ -320,8 +320,10 @@ body.light-mode #mode-toggle {
 }
 
 .experience-item li {
-    margin-bottom: 10px;
-    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem; /* Larger font size for list items */
+    margin-bottom: 12px; /* Adjust spacing for better readability */
+    line-height: 1.5; /* Increase line height for better spacing */
 }
 
 
