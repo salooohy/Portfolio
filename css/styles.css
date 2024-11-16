@@ -605,3 +605,83 @@ body.light-mode #mode-toggle {
 .back-button:hover {
     background-color: #3baea0;
 }
+
+
+/* Skills 2.0 Section Styles */
+.skills2-0-section {
+    text-align: center;
+    background-color: #1a1f2e;
+    color: #ffffff;
+    padding: 50px 20px;
+}
+
+.skills2-0-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #4fd1c5;
+}
+
+.skills2-0-header p {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.skills2-0-header hr {
+    width: 60px;
+    height: 3px;
+    background-color: #4fd1c5;
+    border: none;
+    margin: 0 auto 30px;
+}
+
+/* Grid Layout for Skills */
+.skills2-0-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always ensures 3 columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: #2a2e3b;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.skill-item img {
+    filter: brightness(0) invert(1); /* Makes images white */
+    transition: filter 0.3s ease; /* Smooth transition for hover effects */
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.skill-item img:hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px #ffffff); /* Add glow effect on hover */
+}
+.skill-item h3 {
+    font-size: 1.2rem;
+    color: #4fd1c5;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .skills2-0-grid {
+        grid-template-columns: 1fr; /* Stacks items on small screens */
+    }
+}
