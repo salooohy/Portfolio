@@ -770,3 +770,277 @@ body.light-mode #mode-toggle {
     font-weight: 500;
     margin-left: -20px;
 }
+
+/* Responsive Adjustments for iPhones */
+@media screen and (max-width: 768px) {
+    /* Social Icons Fix for Mobile */
+.social-links {
+    flex-direction: row; /* Align icons horizontally for better display */
+    gap: 15px;
+    position: static; /* Remove any overlapping issues */
+    margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    
+    /* Reduce font size for the main header */
+    .about-text h1 {
+        font-size: 1.8em;
+        line-height: 1.2;
+    }
+
+    .about-text p {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    /* Fix image alignment */
+    .about-image img {
+        width: 100%;
+        max-width: 250px; /* Resize image for smaller screens */
+        margin: 20px auto 0; /* Center the image */
+        display: block;
+    }
+
+    /* Navigation fix */
+    .nav-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Social links spacing */
+    .social-links {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Adjust the section padding */
+    .about-section {
+        padding: 20px 10px;
+    }
+}
+
+/* General Responsive Fixes */
+.nav {
+    flex-wrap: wrap;
+    padding: 10px 15px; /* Reduced padding for smaller screens */
+}
+
+.nav-item {
+    font-size: 0.9em; /* Adjust font size */
+}
+    .nav {
+        padding: 10px;
+    }
+
+    .nav-item {
+        font-size: 0.9em;
+    }
+
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .about-text h1 {
+        font-size: 1.5em;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+
+    .project-title {
+        font-size: 1.5em;
+    }
+
+    .contact-banner h2 {
+        font-size: 1.5em;
+    }
+
+    .contact-footer {
+        padding: 15px;
+    }
+
+    .contact-footer p {
+        font-size: 0.9em;
+    }
+}
+
+/* Hide the hamburger menu and dropdown by default */
+.hamburger-menu {
+    display: none;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-nav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: #1a1f2e; /* Matches the theme's background */
+    position: absolute;
+    top: 60px; /* Adjust based on the navbar height */
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 9999; /* Ensure it stays on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    opacity: 0; /* Hidden initially */
+    transform: translateY(-10px); /* Slightly move up */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.dropdown-nav.active {
+    display: flex; /* Show when active */
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+.dropdown-item {
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 20px; /* Add padding for better spacing */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #333333; /* Add a divider between items */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #333333; /* Highlight background on hover */
+    color: #4fd1c5; /* Optional: Change text color on hover */
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+        font-size: 1.5rem;
+        color: #ffffff;
+        padding: 10px 20px;
+    }
+
+    .nav-content {
+        display: none; /* Hide standard nav links on mobile */
+    }
+}
+
+
+/* General Container Styling */
+.container {
+    max-width: 1200px; /* Set maximum width for larger screens */
+    width: 90%; /* Ensure responsiveness */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add spacing on the sides */
+}
+
+/* Projects Section Styling */
+.projects-section {
+    max-width: 1200px; /* Set a maximum width for the projects section */
+    margin: 0 auto; /* Center-align the section */
+    padding: 30px 20px; /* Adjust padding for spacing */
+    text-align: center;
+    width: 90%; /* Ensure responsiveness */
+}
+
+/* Project Cards */
+.project-card {
+    max-width: 400px; /* Set a fixed width for cards */
+    margin: 20px auto; /* Center each card */
+}
+
+/* Projects Section Styling */
+.projects-section {
+    padding: 20px 15px;
+    text-align: center;
+    background-color: #1a1f2e; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+/* Projects Title */
+.projects-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4fd1c5; /* Highlight color */
+    font-weight: bold;
+}
+
+/* Project Card Styling */
+.project-card {
+    background-color: #2a2e3b; /* Dark card background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 15px auto;
+    padding: 15px;
+    max-width: 400px; /* Center and limit width */
+    width: 90%; /* Responsive width */
+    text-align: center;
+}
+
+/* Project Images */
+.project-image {
+    width: 100%; /* Full width inside card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Project Titles */
+.project-title {
+    font-size: 1.5rem;
+    color: #ffffff; /* White text */
+    margin-bottom: 10px;
+}
+
+/* Project Highlights */
+.project-highlight {
+    font-size: 1rem;
+    color: #a0a0a0; /* Light gray for highlights */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Project Button */
+.project-button {
+    display: inline-block;
+    background-color: #4fd1c5;
+    color: #1a1f2e; /* Dark text for contrast */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.project-button:hover {
+    background-color: #3baea0; /* Slightly darker */
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .projects-title {
+        font-size: 1.8rem; /* Adjust font size for mobile */
+    }
+
+    .project-card {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .project-highlight {
+        font-size: 0.9rem;
+    }
+
+    .project-button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

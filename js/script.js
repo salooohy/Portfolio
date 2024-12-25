@@ -72,3 +72,23 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Error: #typed-skills element not found.");
     }
 });
+
+
+function toggleMenu() {
+    const dropdown = document.querySelector('.dropdown-nav');
+    dropdown.classList.toggle('active');
+}
+
+document.addEventListener('click', function (event) {
+    const dropdown = document.querySelector('.dropdown-nav');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    // Close the menu if clicking outside of it
+    if (
+        dropdown.classList.contains('active') &&
+        !dropdown.contains(event.target) &&
+        !hamburger.contains(event.target)
+    ) {
+        dropdown.classList.remove('active');
+    }
+});
