@@ -520,7 +520,7 @@ body.light-mode #mode-toggle {
 .main-image-container {
     width: 100%;
     max-width: 800px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px; /* Center horizontally and add 30px margin at the bottom */
 }
 
 .main-project-image {
