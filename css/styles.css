@@ -328,6 +328,22 @@ body.light-mode #mode-toggle {
 
 
 
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    margin-bottom: 4rem;
+}
 
 
 /* Resume Section Styling */
@@ -543,6 +559,15 @@ body.light-mode #mode-toggle {
     margin-bottom: 50px;
 }
 
+.content-section2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Exactly two columns */
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
 .content-block {
     width: 100%;
     max-width: 800px;
@@ -551,6 +576,16 @@ body.light-mode #mode-toggle {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.content-block {
+    width: 100%;
+    max-width: none;
+    background-color: #2a2e3b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 
 .content-block h2 {
     font-size: 1.8em;
@@ -564,6 +599,21 @@ body.light-mode #mode-toggle {
     line-height: 1.6;
 }
 
+/* Style for unordered list inside .content-block */
+.content-block ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Add space between list items */
+.content-block ul li {
+    margin-bottom: 10px;
+}
+
 /* Gallery Section */
 .gallery-section {
     display: flex;
@@ -574,7 +624,15 @@ body.light-mode #mode-toggle {
 }
 
 .gallery-image {
-    width: calc(33.333% - 20px);
+    width: calc(40% - 5px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-image2 {
+    width: calc(80% - 5px);
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
