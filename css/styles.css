@@ -328,12 +328,27 @@ body.light-mode #mode-toggle {
 
 
 
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 4rem;
 }
 
 .video-container iframe {
@@ -341,11 +356,8 @@ body.light-mode #mode-toggle {
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
-    margin-bottom: 4rem;
+    height: 100%;
 }
-
-
 /* Resume Section Styling */
 .resume-section {
     display: flex;
