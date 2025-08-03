@@ -332,16 +332,6 @@ body.light-mode #mode-toggle {
 
 
 
-
-
-
-body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
