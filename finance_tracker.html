@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance tracker · Salih Al-Tak</title>
+  <meta name="description" content="Where my money goes, from real bank and card data, with Claude doing the categorizing and answering questions.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="index.html#top"><span>1</span>General arrangement</a></li>
+        <li><a href="index.html#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="index.html#parts" aria-current="true"><span>3</span>Parts list</a></li>
+        <li><a href="index.html#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
+    </nav>
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="sheet dsheet">
+      <header class="dhead">
+        <div>
+          <h1 class="lettered"><span class="balloon__n" aria-hidden="true">2</span>Finance tracker</h1>
+          <p class="dhead__lede">Where my money goes, from real bank and card data, with Claude doing the categorizing and answering questions.</p>
+        </div>
+        <div class="dhead__meta">
+          <div><small>Type</small>Personal · 2026</div>
+          <div class="wide"><small>Stack / process</small>Next.js · Supabase · Plaid · Recharts · Anthropic API</div>
+        </div>
+      </header>
+      <figure class="fig fig--main"><div class="fig__frame"><svg viewBox="0 0 560 400" role="img" aria-label="Finance tracker system diagram: bank accounts sync through Plaid into Supabase, Claude categorizes, and the dashboard and chat read the result">
+          <g class="sc-box"><rect x="20" y="40" width="140" height="56"/><rect x="205" y="40" width="130" height="56"/><rect x="380" y="40" width="160" height="56"/><rect x="380" y="172" width="160" height="56"/><rect x="205" y="172" width="130" height="56"/><rect x="380" y="290" width="160" height="56"/><rect x="205" y="290" width="130" height="56"/></g>
+          <g class="sc-t">
+            <text x="90" y="66">Banks &amp; cards</text><text x="90" y="84" class="sc-s">CAD accounts</text>
+            <text x="270" y="66">Plaid</text><text x="270" y="84" class="sc-s">sync now</text>
+            <text x="460" y="66">Supabase Postgres</text><text x="460" y="84" class="sc-s">transactions · is_work</text>
+            <text x="460" y="198">Claude</text><text x="460" y="216" class="sc-s">auto-categorize</text>
+            <text x="270" y="198">Needs review</text><text x="270" y="216" class="sc-s">unsure items</text>
+            <text x="460" y="316">Dashboard</text><text x="460" y="334" class="sc-s">money in · money out</text>
+            <text x="270" y="316">Insights chat</text><text x="270" y="334" class="sc-s">ask about spending</text>
+          </g>
+          <g class="sc-l"><path d="M160 68 H205"/><path d="M335 68 H380"/><path d="M460 96 V172"/><path d="M380 200 H335"/><path d="M500 228 V290"/><path d="M420 228 V260 H270 V290"/></g>
+          <g class="sc-a"><path d="M199 64 L205 68 L199 72"/><path d="M374 64 L380 68 L374 72"/><path d="M456 166 L460 172 L464 166"/><path d="M341 196 L335 200 L341 204"/><path d="M496 284 L500 290 L504 284"/><path d="M266 284 L270 290 L274 284"/></g>
+          <text x="20" y="380" class="sc-n">Private repo · real financial data, so no screenshots</text>
+        </svg></div><figcaption class="view-label"><b>View 1</b></figcaption></figure>
+      <div class="dbody">
+<div class="content-block">
+  <h2>What it answers</h2>
+  <p>Opening it should answer one question at a glance: how much do I have left to spend this month, and am I on pace? Under that sits a weekly routine of clearing uncategorized transactions and checking trends.</p>
+  <p class="private-note">Private repo · it runs on my real accounts, so there are no screenshots</p>
+</div>
+<div class="content-block">
+  <h2>How it works</h2>
+  <ul>
+    <li><strong>Plaid</strong> syncs my bank and card accounts on demand. Every institution is Canadian, so everything is in CAD.</li>
+    <li><strong>Claude categorizes</strong> new transactions, checking my own history first. Anything it isn't sure about stays uncategorized in a needs-review queue for me to clear.</li>
+    <li><strong>Work and personal</strong> spending are split with a flag on each transaction, so work expenses never inflate the personal picture.</li>
+    <li><strong>Insights chat</strong> answers questions about my money in plain language.</li>
+    <li>Transfers between my own accounts and credit card payments never count as spending or income, and month-to-month comparisons use the same days of the month.</li>
+  </ul>
+</div>
+<div class="content-block">
+  <h2>Why a second version</h2>
+  <p>It replaces <a href="finance_app.html">version one</a>, a Streamlit app that needed statement files dropped into a folder. Linking accounts directly removed that chore, and moving the categorizing to Claude removed most of the rest.</p>
+</div>
+<div class="content-block">
+  <h2>Build</h2>
+  <ul>
+    <li><strong>Next.js 16</strong> (App Router) and <strong>Tailwind v4</strong></li>
+    <li><strong>Supabase</strong> for auth and Postgres; single user, no sign-up page</li>
+    <li><strong>Plaid</strong>, <strong>Recharts</strong>, <strong>Zod</strong>, and the <strong>Anthropic API</strong></li>
+  </ul>
+</div>
+      </div>
+
+      <nav class="dnav" aria-label="Parts">
+        <a class="dnav__prev" href="basecamp.html"><small>Previous · item 1</small><b>Basecamp</b></a>
+        <a class="dnav__mid cmd" href="index.html#parts">Parts list</a>
+        <a class="dnav__next" href="Garbot_Capstone.html"><small>Next · item 3</small><b>GarBot</b></a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="mailto:salih.h.altak@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="js/sheet.js" defer></script>
+</body>
+</html>

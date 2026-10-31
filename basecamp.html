@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basecamp · Salih Al-Tak</title>
+  <meta name="description" content="A training dashboard on my own Garmin data that puts effort next to recovery, with strength sessions logged by text message.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="index.html#top"><span>1</span>General arrangement</a></li>
+        <li><a href="index.html#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="index.html#parts" aria-current="true"><span>3</span>Parts list</a></li>
+        <li><a href="index.html#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
+    </nav>
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="sheet dsheet">
+      <header class="dhead">
+        <div>
+          <h1 class="lettered"><span class="balloon__n" aria-hidden="true">1</span>Basecamp</h1>
+          <p class="dhead__lede">A training dashboard on my own Garmin data that puts effort next to recovery, with strength sessions logged by text message.</p>
+        </div>
+        <div class="dhead__meta">
+          <div><small>Type</small>Personal · 2026</div>
+          <div class="wide"><small>Stack / process</small>Next.js · Upstash Redis · Garmin Connect · Anthropic API · Vercel</div>
+        </div>
+      </header>
+      <figure class="fig fig--main"><div class="fig__frame"><svg viewBox="0 0 560 400" role="img" aria-label="Basecamp system diagram: Garmin data and Telegram messages flow through Redis and Claude into the dashboard">
+          <g class="sc-box"><rect x="20" y="40" width="150" height="56"/><rect x="20" y="172" width="150" height="56"/><rect x="215" y="40" width="130" height="56"/><rect x="215" y="172" width="130" height="56"/><rect x="390" y="96" width="150" height="76"/><rect x="390" y="270" width="150" height="56"/></g>
+          <g class="sc-t">
+            <text x="95" y="66">Garmin watch</text><text x="95" y="84" class="sc-s">activity · sleep · HRV</text>
+            <text x="95" y="198">Telegram bot</text><text x="95" y="216" class="sc-s">plain-English workout</text>
+            <text x="280" y="66">Upstash Redis</text><text x="280" y="84" class="sc-s">tokens · 30 min cache</text>
+            <text x="280" y="198">Claude</text><text x="280" y="216" class="sc-s">parses each workout</text>
+            <text x="465" y="128">Next.js on Vercel</text><text x="465" y="146" class="sc-s">dashboard · /log</text>
+            <text x="465" y="296">Strava-ready text</text><text x="465" y="314" class="sc-s">bot reply</text>
+          </g>
+          <g class="sc-l"><path d="M170 68 H215"/><path d="M170 200 H215"/><path d="M345 68 H368 V120 H390"/><path d="M345 200 H368 V148 H390"/><path d="M465 172 V270"/></g>
+          <g class="sc-a"><path d="M209 64 L215 68 L209 72"/><path d="M209 196 L215 200 L209 204"/><path d="M384 116 L390 120 L384 124"/><path d="M384 144 L390 148 L384 152"/><path d="M461 264 L465 270 L469 264"/></g>
+          <text x="20" y="380" class="sc-n">Private repo · personal health data, so no screenshots</text>
+        </svg></div><figcaption class="view-label"><b>View 1</b></figcaption></figure>
+      <div class="dbody">
+<div class="content-block">
+  <h2>What it answers</h2>
+  <p>Basecamp puts my training effort next to my recovery: daily activity and workouts beside sleep, sleep score and HRV, with neither side treated as secondary. One glance should tell me whether today should be hard, easy or rest. The trend charts cover the weekly review.</p>
+  <p class="private-note">Private repo · it shows my own health data, so there are no screenshots</p>
+</div>
+<div class="content-block">
+  <h2>Staying signed in</h2>
+  <p>Garmin's login page sits behind Cloudflare bot detection, and serverless IPs routinely get a CAPTCHA no library can solve. So the deployed app never logs in. I run a login script once from home, it saves the session tokens to Upstash Redis, and the app reads them on every request and refreshes the short-lived access token itself.</p>
+  <p>Dashboard data is cached for 30 minutes so a page load never waits on Garmin. A refresh button and a daily cron force an early refresh, and if a refresh fails the page falls back to the last cached data and says so.</p>
+</div>
+<div class="content-block">
+  <h2>Strength logging by text</h2>
+  <p>Garmin doesn't track strength sets the way I want, so I text a Telegram bot something like “bench 3x8 at 135, squats 5x5 225, felt strong”. Claude parses it into exercises, sets, reps and pounds, and it's logged exactly as if I'd filled in the form. The bot replies with the session as plain text, ready to paste into Strava.</p>
+</div>
+<div class="content-block">
+  <h2>Build</h2>
+  <ul>
+    <li><strong>Next.js 16</strong> with the App Router and Server Components, deployed on Vercel behind a password</li>
+    <li><strong>Hand-built SVG charts</strong>, no chart library</li>
+    <li><strong>Upstash Redis</strong> for Garmin tokens and the data cache</li>
+    <li><strong>Anthropic API</strong> for parsing the Telegram messages</li>
+    <li>Data windows: steps over 28 days, sleep over 14 nights, the 15 latest activities, strength over 30 days</li>
+  </ul>
+</div>
+      </div>
+
+      <nav class="dnav" aria-label="Parts">
+        <span class="dnav__prev"></span>
+        <a class="dnav__mid cmd" href="index.html#parts">Parts list</a>
+        <a class="dnav__next" href="finance_tracker.html"><small>Next · item 2</small><b>Finance tracker</b></a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="mailto:salih.h.altak@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="js/sheet.js" defer></script>
+</body>
+</html>

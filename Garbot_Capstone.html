@@ -1,44 +1,53 @@
-<link rel="stylesheet" href="css/styles.css">
-<!-- Navigation Bar -->
-     <!-- Social Media Icons -->
-     <nav class="nav">
-        <div class="nav-content">
-            <a class="nav-item active" href="index.html">ABOUT</a> <!-- Link to the main about page -->
-            <a class="nav-item" href="experience.html">EXPERIENCE</a> <!-- Link to the new Experience page -->
-            <a class="nav-item" href="projects.html">PROJECTS</a> <!-- Link to projects page (if it exists) -->
-        </div>
-    
-        <div class="social-media">
-            <a href="https://github.com/dashboard" class="social-link">
-                <img src="Icons/github.svg" alt="github" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-            </a>
-            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                <img src="Icons/email.svg" alt="Email" class="social-icon">
-            </a>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GarBot · Salih Al-Tak</title>
+  <meta name="description" content="An autonomous robot that finds, collects and compacts trash in public parks.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="index.html#top"><span>1</span>General arrangement</a></li>
+        <li><a href="index.html#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="index.html#parts" aria-current="true"><span>3</span>Parts list</a></li>
+        <li><a href="index.html#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
     </nav>
-    
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
+    </div>
+  </header>
 
-
-    <section class="project-details-section">
-        <!-- Header Section: Project Title and Main Image -->
-        <div class="header-section">
-            <h1 class="project-title">Garbot</h1>
-            <div class="main-image-container">
-                <img src="images/garbot1.webp" alt="Mobile Robot Image" class="main-project-image">
-            </div>
+  <main>
+    <article class="sheet dsheet">
+      <header class="dhead">
+        <div>
+          <h1 class="lettered"><span class="balloon__n" aria-hidden="true">3</span>GarBot</h1>
+          <p class="dhead__lede">An autonomous robot that finds, collects and compacts trash in public parks.</p>
         </div>
-
-        
-        
-    <!-- Content Section: What, How, Results -->
-<!-- Content Section: What, How, Results -->
+        <div class="dhead__meta">
+          <div><small>Type</small>Capstone</div>
+          <div class="wide"><small>Stack / process</small>SolidWorks · Python · YOLOv11n · Arduino · Raspberry Pi · 3D printing</div>
+        </div>
+      </header>
+      <figure class="fig fig--main"><div class="fig__frame"><img src="images/garbot1.webp" alt="GarBot" fetchpriority="high" decoding="async"></div><figcaption class="view-label"><b>View 1</b></figcaption></figure>
+      <div class="dbody">
 <div class="content-section">
     <div class="content-block">
         <h2>Project Goals</h2>
@@ -50,82 +59,59 @@
             <li><strong>Locate debris</strong> (Identify at least 85% of trash)</li>
         </ul>
     </div>
-
     <div class="content-block">
   <h2>Demo Video</h2>
-  <div class="youtube-container">
-   <iframe src="https://www.youtube.com/embed/QLogYZApm3Q?si=nji3SEyexhPPikDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
+  <figure class="fig"><div class="fig__frame"><iframe loading="lazy" src="https://www.youtube.com/embed/QLogYZApm3Q?si=nji3SEyexhPPikDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption class="view-label"><b>View 2</b></figcaption></figure>
 </div>
-
     <div class="content-block">
         <h2>Mechanical Design</h2>
         <p>
             GarBot features a robotic arm, fitted with a gripper at the end to pick up trash and then deposit it into the hopper. The gripper mechanism is opened and closed by a rack and pinon and designed to be fitted with a pressure sensor on the interior of the gripper so that the correct amount of force can be applied when lifting objects. 
-
             It also features a scissor lift that moves a compaction plate within the hopper, where the collected garbage is stored. This compresses the garbage that has been collected to reduce the amount of space it takes up, so that the robot can collect a larger volume of garbage per trip.
         </p>
     </div>
-
-         <!-- Gallery Section: Additional Images -->
         <div class="gallery-section">
-            <img src="images/garbot3.webp" alt="Robot Side View" class="gallery-image">
-            <img src="images/garbot 4.webp" alt="Robot Top View" class="gallery-image">
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot3.webp" alt="GarBot, view 3" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 3</b></figcaption></figure>
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot 4.webp" alt="GarBot, view 4" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 4</b></figcaption></figure>
         </div>
-    
-
-
     <div class="content-block">
         <h2>AI Object Detection</h2>
         <p>
             GarBot uses the YOLOv11n object detection model from Ultralytics, optimized for real-time performance on a Raspberry Pi 4. This lightweight model was selected for its fast inference speed and solid detection accuracy—crucial for embedded systems with limited resources.
-
             To maximize performance, the model was exported to NCNN format, allowing efficient CPU-based inference without the need for external accelerators. A custom Python script handles live video input from a USB camera and performs real-time detection, drawing bounding boxes and calculating object distance using the pinhole camera model. The system achieves ±1 cm distance accuracy and maintains a 92% detection confidence, enabling GarBot to detect and approach objects autonomously.
         </p>
     </div>
-
-             <!-- Gallery Section: Additional Images -->
         <div class="gallery-section">
-            <img src="images/garbot5.webp" alt="Robot Side View" class="gallery-image2">
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot5.webp" alt="GarBot, view 5" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 5</b></figcaption></figure>
         </div>
-
          <div class="content-block">
         <h2>Electrical System</h2>
         <p>
             The robot's electrical system is divided into two main parts: power and control. A 12V power supply drives three L298N motor controllers, which in turn power the Arduino Uno and the motors. The Raspberry Pi 4, also wall-powered, handles image processing and AI-based object detection. When a target object is detected, the Pi signals the Arduino to control the motors, navigate toward the object, and initiate the collection and compaction sequence. Key components include a high-torque 26:1 stepper motor, an MG996R servo, and three DC motors selected for their speed and strength.
         </p>
     </div>
-
-         <!-- Gallery Section: Additional Images -->
         <div class="gallery-section">
-            <img src="images/garbot6.png" alt="Robot Side View" class="gallery-image">
-            <img src="images/garbot7.jpg" alt="Robot Top View" class="gallery-image">
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot6.png" alt="GarBot, view 6" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 6</b></figcaption></figure>
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot7.jpg" alt="GarBot, view 7" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 7</b></figcaption></figure>
         </div>
-    
          <div class="content-block">
         <h2>Fabrication</h2>
         <p>
             Using a variety of manufacturing methods such as 3D printing, laser cutting, and cutting and machining angle brackets and shafts, a scaled-down prototype of GarBot was created. Images below show the final fabrication.         </p>
     </div>
-    
             <div class="gallery-section">
-            <img src="images/garbot8.webp" alt="Robot Side View" class="gallery-image">
-            <img src="images/garbot9.webp" alt="Robot Top View" class="gallery-image">
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot8.webp" alt="GarBot, view 8" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 8</b></figcaption></figure>
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot9.webp" alt="GarBot, view 9" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 9</b></figcaption></figure>
         </div>
-
          <div class="content-block">
         <h2>Final Part List</h2>
         <p>
             The drawings below contain a full, labelled parts list for the design of this project.         </p>
     </div>
-
-        
             <div class="gallery-section">
-            <img src="images/garbot10.webp" alt="Robot Side View" class="gallery-image2">
-            <img src="images/garbot11.webp" alt="Robot Top View" class="gallery-image2">
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot10.webp" alt="GarBot, view 10" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 10</b></figcaption></figure>
+            <figure class="fig"><div class="fig__frame"><img src="images/garbot11.webp" alt="GarBot, view 11" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 11</b></figcaption></figure>
         </div>
-
-
         <div class="content-block">
             <h2>Group Members</h2>
             <ul>
@@ -135,40 +121,23 @@
                 <li>Jerry Liu</li>
             </ul>
         </div>
-        
- 
-              <!-- Resume Section -->
-    <div class="resume-section">
-        <a href="./Documents/garbot_report.pdf" target="Salih_Al-Tak_Resume.pdf">
-            <button class="resume-button">View Full Project Report</button>
-        </a>
-    </div> 
-    
-        <!-- Footer Section: Back to Projects Button -->
-        <div class="button-container">
-            <a href="projects.html" class="back-button">Back to Projects</a>
-        </div>
-    </section>
-    
+    <p class="doc-link"><a class="cmd" href="Documents/garbot_report.pdf" target="_blank" rel="noopener">View Full Project Report</a></p>
+      </div>
 
-    <section class="contact-section">
+      <nav class="dnav" aria-label="Parts">
+        <a class="dnav__prev" href="finance_tracker.html"><small>Previous · item 2</small><b>Finance tracker</b></a>
+        <a class="dnav__mid cmd" href="index.html#parts">Parts list</a>
+        <a class="dnav__next" href="Bracelet_Aid.html"><small>Next · item 4</small><b>Bracelet Aid</b></a>
+      </nav>
 
-        <footer class="contact-footer">
-            
-            <div class="social-links">
-                <a href="https://github.com/dashboard" class="social-link">
-                    <img src="Icons/github.svg" alt="github" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                    <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                    <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-                </a>
-                <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                    <img src="Icons/email.svg" alt="Email" class="social-icon">
-                </a>
-            </div>
-            <p>Thank you for visiting my website</p>
-        </footer>
-    </section>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="mailto:salih.h.altak@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="js/sheet.js" defer></script>
+</body>
+</html>

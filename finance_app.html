@@ -1,45 +1,53 @@
-<link rel="stylesheet" href="css/styles.css">
-<!-- Navigation Bar -->
-     <!-- Social Media Icons -->
-     <nav class="nav">
-        <div class="nav-content">
-            <a class="nav-item active" href="index.html">ABOUT</a> <!-- Link to the main about page -->
-            <a class="nav-item" href="experience.html">EXPERIENCE</a> <!-- Link to the new Experience page -->
-            <a class="nav-item" href="projects.html">PROJECTS</a> <!-- Link to projects page (if it exists) -->
-        </div>
-    
-        <div class="social-media">
-            <a href="https://github.com/dashboard" class="social-link">
-                <img src="Icons/github.svg" alt="github" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-            </a>
-            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                <img src="Icons/email.svg" alt="Email" class="social-icon">
-            </a>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance app, v1 · Salih Al-Tak</title>
+  <meta name="description" content="The first version of my finance tool: statement files in, categorized spending out.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="index.html#top"><span>1</span>General arrangement</a></li>
+        <li><a href="index.html#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="index.html#parts" aria-current="true"><span>3</span>Parts list</a></li>
+        <li><a href="index.html#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
     </nav>
-    
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
+    </div>
+  </header>
 
-
-    <section class="project-details-section">
-        <!-- Header Section: Project Title and Main Image -->
-                 <div class="header-section">
-             <h1 class="project-title">Finance Management App</h1>
-             <div class="main-image-container">
-                 <!-- Add main screenshot here -->
-                 <img src="images/finance1.png" alt="Finance Management App Project Image" class="main-project-image">
-             </div>
-         </div>
-
-        
-        
-    <!-- Content Section: What, How, Results -->
-<!-- Content Section: What, How, Results -->
+  <main>
+    <article class="sheet dsheet">
+      <header class="dhead">
+        <div>
+          <h1 class="lettered"><span class="balloon__n" aria-hidden="true">7</span>Finance app, v1</h1>
+          <p class="dhead__lede">The first version of my finance tool: statement files in, categorized spending out.</p>
+        </div>
+        <div class="dhead__meta">
+          <div><small>Type</small>Python</div>
+          <div class="wide"><small>Stack / process</small>Python · Streamlit · pandas · Plotly · xlwings · watchdog</div>
+        </div>
+      </header>
+      <figure class="fig fig--main"><div class="fig__frame"><img src="images/finance1.png" alt="Finance app, v1" fetchpriority="high" decoding="async"></div><figcaption class="view-label"><b>View 1</b></figcaption></figure>
+      <div class="dbody">
 <div class="content-section">
     <div class="content-block">
         <h2>Project Overview</h2>
@@ -47,7 +55,6 @@
             The Finance App is a comprehensive personal finance management system designed to automate bank statement processing, categorize transactions, and provide detailed financial analytics. The application consists of three main components: automated file watchers for bank statement processing, a Streamlit-based web dashboard for transaction management, and data persistence capabilities.
         </p>
     </div>
-
     <div class="content-block">
         <h2>Project Goals</h2>
         <ul>
@@ -58,7 +65,6 @@
             <li><strong>Multi-account support</strong> - Process transactions from multiple bank accounts (CIBC, AMEX)</li>
         </ul>
     </div>
-
     <div class="content-block">
         <h2>Key Features</h2>
         <ul>
@@ -70,13 +76,9 @@
             <li><strong>Data Persistence</strong> - Master database storing all historical transactions with automatic backup</li>
         </ul>
     </div>
-
-                   <!-- Gallery Section: Dashboard Screenshots -->
          <div class="gallery-section">
-             <!-- Add dashboard screenshots here --> 
-             <img src="images/finance2.png" alt="Finance Management App Dashboard" class="gallery-image-large">
+             <figure class="fig"><div class="fig__frame"><img src="images/finance2.png" alt="Finance app, v1, view 2" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 2</b></figcaption></figure>
          </div>
-
     <div class="content-block">
         <h2>Technical Architecture</h2>
         <p>
@@ -90,42 +92,34 @@
             <li><strong>Storage:</strong> JSON-based persistent data storage</li>
         </ul>
     </div>
-
          <div class="content-block">
         <h2>Automated Bank Statement Processing</h2>
         <p>
             The app features intelligent file watchers that monitor designated folders for new bank statements. When a new CIBC CSV or AMEX XLS file is detected, the system automatically processes it, cleans the data, standardizes formats, and saves the processed file to the appropriate output folder. This eliminates the need for manual file handling and ensures consistent data structure across all imported transactions.
         </p>
     </div>
-
-                   <!-- Gallery Section: File Processing -->
          <div class="gallery-section">
-             <!-- Add file processing screenshot here -->
-             <img src="images/finance4.png" alt="Automated Bank Statement Processing" class="gallery-image-large">
+             <figure class="fig"><div class="fig__frame"><img src="images/finance4.png" alt="Finance app, v1, view 3" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 3</b></figcaption></figure>
          </div>
-
          <div class="content-block">
         <h2>Smart Categorization System</h2>
         <p>
             The application uses intelligent keyword-based categorization to automatically assign transactions to predefined categories. The system learns from user corrections and builds a mapping of merchant names to categories, improving accuracy over time. Users can add, edit, and manage custom categories to match their financial tracking needs.
         </p>
     </div>
-
         <div class="content-block">
             <h2>Performance Metrics</h2>
             <ul>
                 <li><strong>Processing Accuracy:</strong> 95%+ correct transaction categorization</li>
-                <li><strong>Processing Speed:</strong> < 30 seconds for 1000+ transactions</li>
+                <li><strong>Processing Speed:</strong> &lt; 30 seconds for 1000+ transactions</li>
                 <li><strong>Data Integrity:</strong> Zero data loss during processing</li>
-                <li><strong>Response Time:</strong> < 3 seconds for dashboard interactions</li>
-                <li><strong>Time to Insight:</strong> < 2 minutes from file upload to summary view</li>
+                <li><strong>Response Time:</strong> &lt; 3 seconds for dashboard interactions</li>
+                <li><strong>Time to Insight:</strong> &lt; 2 minutes from file upload to summary view</li>
             </ul>
         </div>
-
         <div class="gallery-section">
-            <img src="images/finance3.png" alt="Smart Categorization System" class="gallery-image-large">
+            <figure class="fig"><div class="fig__frame"><img src="images/finance3.png" alt="Finance app, v1, view 4" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 4</b></figcaption></figure>
         </div>
-
         <div class="content-block">
             <h2>Technologies Used</h2>
             <ul>
@@ -138,36 +132,22 @@
                 <li>JSON - Data persistence</li>
             </ul>
         </div>
-        
- 
-              <!-- Resume Section -->
+      </div>
 
-    
-        <!-- Footer Section: Back to Projects Button -->
-        <div class="button-container">
-            <a href="projects.html" class="back-button">Back to Projects</a>
-        </div>
-    </section>
-    
+      <nav class="dnav" aria-label="Parts">
+        <a class="dnav__prev" href="self_balancing.html"><small>Previous · item 6</small><b>Self-balancing robot</b></a>
+        <a class="dnav__mid cmd" href="index.html#parts">Parts list</a>
+        <a class="dnav__next" href="mobilerobot.html"><small>Next · item 8</small><b>Mobile robot</b></a>
+      </nav>
 
-    <section class="contact-section">
+    </article>
+  </main>
 
-        <footer class="contact-footer">
-            
-            <div class="social-links">
-                <a href="https://github.com/dashboard" class="social-link">
-                    <img src="Icons/github.svg" alt="github" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                    <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                    <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-                </a>
-                <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                    <img src="Icons/email.svg" alt="Email" class="social-icon">
-                </a>
-            </div>
-            <p>Thank you for visiting my website</p>
-        </footer>
-    </section>
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="mailto:salih.h.altak@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="js/sheet.js" defer></script>
+</body>
+</html>

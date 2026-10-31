@@ -1,110 +1,99 @@
-<link rel="stylesheet" href="css/styles.css">
-<!-- Navigation Bar -->
-     <!-- Social Media Icons -->
-     <nav class="nav">
-        <div class="nav-content">
-            <a class="nav-item active" href="index.html">ABOUT</a> <!-- Link to the main about page -->
-            <a class="nav-item" href="experience.html">EXPERIENCE</a> <!-- Link to the new Experience page -->
-            <a class="nav-item" href="projects.html">PROJECTS</a> <!-- Link to projects page (if it exists) -->
-        </div>
-    
-        <div class="social-media">
-            <a href="https://github.com/dashboard" class="social-link">
-                <img src="Icons/github.svg" alt="github" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-            </a>
-            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                <img src="Icons/email.svg" alt="Email" class="social-icon">
-            </a>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gear engineering · Salih Al-Tak</title>
+  <meta name="description" content="Feasibility studies, reverse engineering and test-data tooling from my co-op on automotive gear programs.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="index.html#top"><span>1</span>General arrangement</a></li>
+        <li><a href="index.html#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="index.html#parts" aria-current="true"><span>3</span>Parts list</a></li>
+        <li><a href="index.html#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
     </nav>
-    
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
+    </div>
+  </header>
 
-
-    <section class="project-details-section">
-        <!-- Header Section: Project Title and Main Image -->
-        <div class="header-section">
-            <h1 class="project-title">JE Projects</h1>
-            <div class="main-image-container">
-                <img src="images/FEA.png" alt="Mobile Robot Image" class="main-project-image">
-            </div>
+  <main>
+    <article class="sheet dsheet">
+      <header class="dhead">
+        <div>
+          <h1 class="lettered"><span class="balloon__n" aria-hidden="true">5</span>Gear engineering</h1>
+          <p class="dhead__lede">Feasibility studies, reverse engineering and test-data tooling from my co-op on automotive gear programs.</p>
         </div>
-        
-    <!-- Content Section: What, How, Results -->
+        <div class="dhead__meta">
+          <div><small>Type</small>Stackpole co-op</div>
+          <div class="wide"><small>Stack / process</small>SolidWorks · ANSYS · KISSsoft · Python · SQL · JMP · Django</div>
+        </div>
+      </header>
+      <figure class="fig fig--main"><div class="fig__frame"><img src="images/FEA.png" alt="Gear engineering" fetchpriority="high" decoding="async"></div><figcaption class="view-label"><b>View 1</b></figcaption></figure>
+      <div class="dbody">
 <div class="content-section">
-    <!-- What Section -->
     <div class="content-block">
         <h2>Feasibility Studies</h2>
         <p>
             In my role, I coordinated cross-functional teams to meet project requirements from RFQ to production. Starting with performance analyses in KISSsoft, I ensured prototypes passed FEA simulations before proceeding to lab testing. I designed custom fixtures for mechanical testing, ensuring predictable failure conditions, and managed sourcing for heat treatment or additional processes when required. This approach ensured streamlined workflows and reliable outcomes.
         </p>
     </div>
-
     <div class="gallery-section">
-        <img src="images/testing.jpg" alt="Robot Side View" class="gallery-image">
-        <img src="images/kb.jpg" alt="Robot Top View" class="gallery-image">
+        <figure class="fig"><div class="fig__frame"><img src="images/testing.jpg" alt="Gear engineering, view 2" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 2</b></figcaption></figure>
+        <figure class="fig"><div class="fig__frame"><img src="images/kb.jpg" alt="Gear engineering, view 3" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 3</b></figcaption></figure>
     </div>
-
-    <!-- How Section -->
     <div class="content-block">
         <h2>Reverse Engineering</h2>
         <p>
             Reverse engineered an outsourced process involving extensive dimensional analysis of a tooling die used for surface densification on gears. The rolling die profile was reverse-engineered into a detailed drawing with official specifications. Simulations were conducted in ANSYS, and after prototyping, CpK metrics were used to validate the manufacturing process, reducing size discrepancies by 40%.
-
         </p>
-        
     </div>
-
     <div class="gallery-section">
-        <img src="images/RE.JPEG" alt="Robot Side View" class="gallery-image">
-        <img src="images/FC.JPG" alt="Robot Top View" class="gallery-image">
+        <figure class="fig"><div class="fig__frame"><img src="images/RE.JPEG" alt="Gear engineering, view 4" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 4</b></figcaption></figure>
+        <figure class="fig"><div class="fig__frame"><img src="images/FC.JPG" alt="Gear engineering, view 5" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 5</b></figcaption></figure>
     </div>
-
-    <!-- Results Section -->
     <div class="content-block">
         <h2>Data Analysis</h2>
         <p>
             Processed data from 50+ mechanical tests stored in MySQL using Python, JMP, and SQL for on-the-go visualizations and analysis. Created matplotlib visualizations for deeper insights and developed a Django web application to pipeline data for real-time filtering, analysis, and visualization. Delivered an intuitive platform for streamlined decision-making.        </p>
     </div>
 </div>
-
-    
-        <!-- Gallery Section: Additional Images -->
         <div class="main-image-container">
-            <img src="images/Django.png" alt="Mobile Robot Image" class="main-project-image">
+            <figure class="fig"><div class="fig__frame"><img src="images/Django.png" alt="Gear engineering, view 6" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 6</b></figcaption></figure>
         </div>
+      </div>
 
-        <!-- Footer Section: Back to Projects Button -->
-        <div class="button-container">
-            <a href="projects.html" class="back-button">Back to Projects</a>
-        </div>
-    </section>
-    
+      <nav class="dnav" aria-label="Parts">
+        <a class="dnav__prev" href="Bracelet_Aid.html"><small>Previous · item 4</small><b>Bracelet Aid</b></a>
+        <a class="dnav__mid cmd" href="index.html#parts">Parts list</a>
+        <a class="dnav__next" href="self_balancing.html"><small>Next · item 6</small><b>Self-balancing robot</b></a>
+      </nav>
 
+    </article>
+  </main>
 
-    <section class="contact-section">
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="mailto:salih.h.altak@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
 
-        <footer class="contact-footer">
-            
-            <div class="social-links">
-                <a href="https://github.com/dashboard" class="social-link">
-                    <img src="Icons/github.svg" alt="github" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                    <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                    <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-                </a>
-                <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                    <img src="Icons/email.svg" alt="Email" class="social-icon">
-                </a>
-            </div>
-            <p>Thank you for visiting my website</p>
-        </footer>
-    </section>
+  <script src="js/sheet.js" defer></script>
+</body>
+</html>

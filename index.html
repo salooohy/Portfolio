@@ -1,174 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salih's Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
-    <link rel="icon" type="image/png" href="Icons/engineering.png">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
- <!-- Include typed.js library -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Create a new instance of Typed.js
-            var typed = new Typed('#typed-name', {
-                strings: ["", "Salih Al-Tak"], // Start with an empty string and then type your name
-                typeSpeed: 50,  // Typing speed in milliseconds
-                backSpeed: 30,  // Backspacing speed in milliseconds
-                startDelay: 500,  // Delay before typing starts
-                backDelay: 1000,  // Delay before starting to backspace
-                loop: false,  // Keep looping the animation
-                showCursor: true,  // Show the blinking cursor
-                cursorChar: "|",  // Character for the cursor
-                smartBackspace: false,  // Prevent smart backspace
-                loopCount: Infinity,  // Loop indefinitely
-            });
-        });
-    </script>
-    
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salih Al-Tak, Consultant and Mechanical Engineer</title>
+  <meta name="description" content="Salih Al-Tak: operations consultant at Isaac Operations, mechanical engineer, and builder of robots, mechanisms and software tools. Toronto, ON.">
+  <meta property="og:title" content="Salih Al-Tak, Rev C">
+  <meta property="og:description" content="Consultant at Isaac Operations. Mechanical engineer who still builds things.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+  <script type="importmap">{ "imports": { "three": "./js/vendor/three.module.min.js" } }</script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-     <!-- Social Media Icons -->
-     <nav class="nav">
-        <div class="nav-content">
-            <a class="nav-item active" href="index.html">ABOUT</a>
-            <a class="nav-item" href="experience.html">EXPERIENCE</a>
-            <a class="nav-item" href="projects.html">PROJECTS</a>
-        </div>
-        
-    
-        <div class="social-media">
-            <a href="https://github.com/dashboard" class="social-link">
-                <img src="Icons/github.svg" alt="GitHub Icon" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-            </a>
-            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                <img src="Icons/email.svg" alt="Email Icon" class="social-icon">
-            </a>
-        </div>
-    
-        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+  <a class="skip" href="#revisions">Skip to experience</a>
+
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="#top"><span>1</span>General arrangement</a></li>
+        <li><a href="#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="#parts"><span>3</span>Parts list</a></li>
+        <li><a href="#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
     </nav>
-    
-    <div class="dropdown-nav">
-        <a href="index.html" class="dropdown-item">ABOUT</a>
-        <a href="experience.html" class="dropdown-item">EXPERIENCE</a>
-        <a href="projects.html" class="dropdown-item">PROJECTS</a>
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
     </div>
-    
-    
-    
-    <!-- Main Container -->
+  </header>
 
-
-    <!-- Resume Section -->
-    <div class="resume-section">
-        <a href="./Documents/salih_resume.pdf" target="Salih_Al-Tak_Resume.pdf">
-            <button class="resume-button">View Resume</button>
-        </a>
-    </div>
-
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="about-content">
-                <!-- Text Content -->
-                <div class="about-text">
-                    <h1>Hi, my name is </h1>
-                    <h1><span class="highlight"><span id="typed-name">Salih Al-Tak</span></span></h1>
-                    <p>I'm a <span class="highlight"> curious, driven mechanical engineer</span> fueled by a passion for automation and smart systems, crafting innovative solutions that optimize processes and redefine what's possible.</p>
-                </div>
-                
-                <!-- Image -->
-                <div class="about-image">
-                    <img src="images/Profile pic.jpeg" alt="Your Image">
-                </div>
+  <main>
+    <!-- SHEET 1 · GENERAL ARRANGEMENT -->
+    <section class="sheet ga" id="top" aria-labelledby="name">
+      <div class="ga__grid">
+        <div class="ga__view" id="view">
+          <canvas id="gear" aria-hidden="true"></canvas>
+          <svg class="ga__overlay" id="overlay" aria-hidden="true"></svg>
+          <ol class="balloons" aria-label="Featured parts">
+            <li><a class="balloon" data-anchor="0" href="#item-3"><span class="balloon__n">3</span><span class="balloon__t">GarBot</span></a></li>
+            <li><a class="balloon" data-anchor="1" href="#item-1"><span class="balloon__n">1</span><span class="balloon__t">Basecamp</span></a></li>
+            <li><a class="balloon" data-anchor="2" href="#item-2"><span class="balloon__n">2</span><span class="balloon__t">Finance tracker</span></a></li>
+          </ol>
+          <div class="ga__controls">
+            <div class="views" role="group" aria-label="Projection">
+              <button type="button" data-view="iso" aria-pressed="true">Iso</button>
+              <button type="button" data-view="front" aria-pressed="false">Front</button>
+              <button type="button" data-view="top" aria-pressed="false">Top</button>
+              <button type="button" data-view="right" aria-pressed="false">Right</button>
             </div>
-        </section>
+            <p class="view-label" id="viewLabel"><b>Isometric view</b> &nbsp;Scale 2:1 &nbsp;· Drag to rotate</p>
+          </div>
+        </div>
 
+        <aside class="ga__side">
+          <table class="revs" aria-label="Revisions">
+            <caption class="letter">Revisions</caption>
+            <thead><tr><th scope="col">Rev</th><th scope="col">Description</th><th scope="col">Date</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td><a href="#rev-a">Jr. engineering specialist, Stackpole International</a></td><td>2023-05</td></tr>
+              <tr><td>B</td><td><a href="#rev-b">Building design specialist, Adam Tools</a></td><td>2024-09</td></tr>
+              <tr class="is-current"><td><span class="revtri" aria-label="Current revision C"><svg viewBox="0 0 40 36" aria-hidden="true"><polygon points="20,2 38,34 2,34"/></svg>C</span></td><td><a href="#rev-c">Consultant, Isaac Operations</a></td><td>2026-03</td></tr>
+            </tbody>
+          </table>
 
-    <script src="js/script.js"></script> <!-- Link to your JS file -->
+          <div class="notes">
+            <p class="letter notes__h">Notes</p>
+            <ol>
+              <li>Mechanical engineer, now an operations consultant in Toronto.</li>
+              <li>I map how a system actually works, find where it stalls, and fix it: on a shop floor, inside an engineering team, or in software.</li>
+              <li>Still building. Robots and mechanisms, and the software tools I use every day.</li>
+            </ol>
+          </div>
+
+          <div class="tblock">
+            <div class="tblock__c tblock__name">
+              <h1 id="name" class="lettered">Salih Al-Tak</h1>
+              <p>Consultant, Isaac Operations · Toronto, ON</p>
+            </div>
+            <div class="tblock__c tblock__links">
+              <a class="cmd cmd--primary" href="mailto:salih.h.altak@gmail.com">Email me</a>
+              <a class="cmd" href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="cmd" href="Documents/salih_resume.pdf" target="_blank" rel="noopener">Resume</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SHEET 2 · REVISION HISTORY -->
+    <section class="sheet" id="revisions" aria-labelledby="revisions-h">
+      <h2 class="sheet-title lettered" id="revisions-h">Revision history</h2>
+
+      <article class="rev is-current" id="rev-c">
+        <svg class="rev__cloud draw" aria-hidden="true"></svg>
+        <div class="rev__meta">
+          <span class="revtri revtri--lg"><svg viewBox="0 0 40 36" aria-hidden="true"><polygon points="20,2 38,34 2,34"/></svg>C</span>
+          <p class="letter">Mar 2026 to present</p>
+          <p class="letter rev__lamp">Current</p>
+        </div>
+        <div class="rev__body">
+          <h3>Consultant</h3>
+          <p class="rev__org">Isaac Operations · Toronto, ON</p>
+          <ol class="rev__notes">
+            <li>Designed and led SOP trainings and workshops for a defense shipbuilding material provisioning team: mapped the current process, pinpointed where items stall, and facilitated pain-point sizing and value–ease prioritization to agree on and roll out solutions under strict data-handling requirements.</li>
+            <li>Own an end-to-end workstream to unlock capacity across a 400-person organization, managing client communications, timelines, risks and status updates with leadership; currently delivering 10% capacity unlocked.</li>
+            <li>Partnered with 8 engineers and their director at a data center manufacturer to map the engineering change workflow, using time studies and JIRA priority analysis to surface capacity lost to unclear priorities and fragmented systems.</li>
+            <li>Upgraded the 8-engineer team’s redlining workflow so corrections land on the original drawing in PLM with accurate revision control.</li>
+            <li>Ran a change readiness survey with 100 responses, translating results into Excel heatmaps across 5 readiness categories.</li>
+            <li>Built a cloud-hosted n8n integration that routes webhook-triggered PDFs to OneDrive through the Microsoft Graph API; still running today.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="rev" id="rev-b">
+        <div class="rev__meta">
+          <span class="revtri revtri--lg"><svg viewBox="0 0 40 36" aria-hidden="true"><polygon points="20,2 38,34 2,34"/></svg>B</span>
+          <p class="letter">Sep 2024 to Mar 2026</p>
+        </div>
+        <div class="rev__body">
+          <h3>Building Design Specialist</h3>
+          <p class="rev__org">Adam Tools Inc. · Mississauga, ON</p>
+          <ol class="rev__notes">
+            <li>Developed engineered floor plans in compliance with project specifications and building codes, collaborating with engineers and architects to optimize designs for structural integrity and cost-efficiency.</li>
+            <li>Performed detailed takeoffs and estimates for construction projects, ensuring accurate material requirements and cost projections for building supplies like lumber, drywall, and beams.</li>
+            <li>Assisted in resolving on-site construction challenges by analyzing plans and providing timely adjustments.</li>
+            <li>Identified cost-saving opportunities through design modifications and material optimizations without compromising quality or safety.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="rev" id="rev-a">
+        <div class="rev__meta">
+          <span class="revtri revtri--lg"><svg viewBox="0 0 40 36" aria-hidden="true"><polygon points="20,2 38,34 2,34"/></svg>A</span>
+          <p class="letter">May 2023 to Aug 2024</p>
+        </div>
+        <div class="rev__body">
+          <h3>Junior Engineering Specialist, Process and Product Development</h3>
+          <p class="rev__org">Stackpole International · Mississauga, ON · <a href="je.html">Project sheet</a></p>
+          <ol class="rev__notes">
+            <li>Designed and drafted gear parts and assemblies in SolidWorks, following DFM and DFA principles for effective production and assembly.</li>
+            <li>Ran a root cause analysis into premature gear failure, using finite element analysis and mechanical testing to pinpoint the underlying issues.</li>
+            <li>Reverse engineered a rolling die for gear densification so the process could be done in-house, removing the cost of external sourcing.</li>
+            <li>Partnered with senior engineers on mechanical components and manufacturing feasibility studies, from concept through production.</li>
+            <li>Used Python, SQL, and JMP to acquire and analyze data for a vehicle transmission benchmarking system, with visualizations that improved decision-making.</li>
+          </ol>
+        </div>
+      </article>
+
+      <div class="superseded">
+        <p class="letter superseded__h">Superseded, 2018 to 2022</p>
+        <ul>
+          <li><b>Crew Leader</b>, Oakly Landscaping. Ran a crew of 5 across 25 commercial and residential properties, including budget and route planning.</li>
+          <li><b>Supervisor</b>, Puma Canada. Promoted from sales; cut store shrinkage 30% with loss-prevention training.</li>
+          <li><b>Member Experience Associate</b>, Movati Athletic.</li>
+          <li><b>Stock Handler</b>, La Maison Simons.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SHEET 3 · PARTS LIST -->
+    <section class="sheet" id="parts" aria-labelledby="parts-h">
+      <h2 class="sheet-title lettered" id="parts-h">Parts list</h2>
+
+      <div class="bom">
+        <table class="bom__table">
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Part</th><th scope="col">Description</th><th scope="col">Stack / process</th></tr>
+          </thead>
+          <tbody>
+            <tr id="item-1" data-detail="schem-basecamp" data-label="Basecamp, system diagram">
+              <td class="bom__item"><span class="balloon__n">1</span></td>
+              <th scope="row"><a href="basecamp.html">Basecamp</a><small>2026 · personal</small></th>
+              <td>A training dashboard on my own Garmin data: effort next to sleep and HRV. I log strength sessions by texting a Telegram bot in plain English, and Claude parses them.</td>
+              <td class="bom__stack">Next.js · Upstash Redis · Garmin Connect · Anthropic API · Vercel</td>
+            </tr>
+            <tr id="item-2" data-detail="schem-finance" data-label="Finance tracker, system diagram">
+              <td class="bom__item"><span class="balloon__n">2</span></td>
+              <th scope="row"><a href="finance_tracker.html">Finance tracker</a><small>2026 · personal</small></th>
+              <td>Syncs my bank and card accounts through Plaid. Claude categorizes transactions, leaves the unsure ones in a review queue, and answers questions in an Insights chat.</td>
+              <td class="bom__stack">Next.js · Supabase · Plaid · Recharts · Anthropic API</td>
+            </tr>
+            <tr id="item-3" data-detail="images/garbot1.webp" data-label="GarBot prototype">
+              <td class="bom__item"><span class="balloon__n">3</span></td>
+              <th scope="row"><a href="Garbot_Capstone.html">GarBot</a><small>Capstone</small></th>
+              <td>An autonomous robot that cleans parks. YOLO vision on a Raspberry Pi finds the trash, a rack-and-pinion gripper picks it up, and a scissor lift compacts it.</td>
+              <td class="bom__stack">SolidWorks · Python · YOLOv11n · Arduino · 3D printing</td>
+            </tr>
+            <tr id="item-4" data-detail="images/brace4.png" data-label="Bracelet Aid">
+              <td class="bom__item"><span class="balloon__n">4</span></td>
+              <th scope="row"><a href="Bracelet_Aid.html">Bracelet Aid</a><small>Product design</small></th>
+              <td>A screw mechanism opens the clasp and a flexible cuff holds it, so people with limited dexterity can put a bracelet on alone. Saved testers 9 to 62 seconds.</td>
+              <td class="bom__stack">CAD · PLA prototypes · user testing · DFM for injection molding</td>
+            </tr>
+            <tr id="item-5" data-detail="images/FEA.png" data-label="Gear FEA study">
+              <td class="bom__item"><span class="balloon__n">5</span></td>
+              <th scope="row"><a href="je.html">Gear engineering</a><small>Stackpole co-op</small></th>
+              <td>Feasibility studies from RFQ to production, a reverse-engineered densification rolling die, and a Django platform for data from 50+ mechanical tests.</td>
+              <td class="bom__stack">SolidWorks · ANSYS · KISSsoft · Python · SQL · JMP · Django</td>
+            </tr>
+            <tr id="item-6" data-detail="images/self_b.jpg" data-label="Self-balancing robot">
+              <td class="bom__item"><span class="balloon__n">6</span></td>
+              <th scope="row"><a href="self_balancing.html">Self-balancing robot</a><small>Controls</small></th>
+              <td>Modeled, assembled and programmed on Arduino. A gyroscope feeds a PID controller that adjusts the motors to keep it upright.</td>
+              <td class="bom__stack">Arduino · embedded C · PID · gyroscope</td>
+            </tr>
+            <tr id="item-7" data-detail="images/finance.png" data-label="Finance Management App, first version">
+              <td class="bom__item"><span class="balloon__n">7</span></td>
+              <th scope="row"><a href="finance_app.html">Finance app, v1</a><small>Python</small></th>
+              <td>The first version of the finance tool. It watches a folder for bank statements, cleans them, and categorizes transactions with rules that learn from my corrections.</td>
+              <td class="bom__stack">Python · Streamlit · pandas · Plotly · watchdog</td>
+            </tr>
+            <tr id="item-8" data-detail="images/Capture.PNG" data-label="Mobile robot">
+              <td class="bom__item"><span class="balloon__n">8</span></td>
+              <th scope="row"><a href="mobilerobot.html">Mobile robot</a><small>Mechanisms</small></th>
+              <td>Travels one metre and comes back on a linkage-driven propulsion mechanism. Built to be interesting to watch, not to be the fastest.</td>
+              <td class="bom__stack">Linkage design · CAD · fabrication</td>
+            </tr>
+            <tr id="item-9" data-detail="images/Snow shovel iso.PNG" data-label="Ergonomic snow shovel">
+              <td class="bom__item"><span class="balloon__n">9</span></td>
+              <th scope="row"><a href="snowshovel.html">Ergonomic snow shovel</a><small>Product design</small></th>
+              <td>A snow removal tool that elderly and disabled people can use safely through a Canadian winter, with less strain on the operator.</td>
+              <td class="bom__stack">Ergonomics · CAD · 3D printing</td>
+            </tr>
+            <tr id="item-10" data-detail="images/Capture1.PNG" data-label="Waste management system">
+              <td class="bom__item"><span class="balloon__n">10</span></td>
+              <th scope="row"><a href="waste.html">Waste management system</a><small>Mechatronics</small></th>
+              <td>Identifies and classifies recyclable containers, then a custom device and program sort them into the right bins.</td>
+              <td class="bom__stack">Sensing · classification · mechanism design</td>
+            </tr>
+            <tr id="item-11" data-detail="images/Wind Turbine Blade (P1).PNG" data-label="Wind turbine blade">
+              <td class="bom__item"><span class="balloon__n">11</span></td>
+              <th scope="row"><a href="turbine.html">Wind turbine blade</a><small>Analysis</small></th>
+              <td>A residential blade for Calgary winds, sized with SolidWorks failure analysis, with materials picked in ANSYS Granta.</td>
+              <td class="bom__stack">SolidWorks Simulation · ANSYS Granta</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <figure class="detail" aria-live="polite">
+          <div class="detail__frame" id="detailFrame">
+            <img id="detailImg" src="images/garbot1.webp" alt="GarBot prototype" hidden>
+            <div class="detail__schem" id="detailSchem"></div>
+          </div>
+          <figcaption class="view-label"><b>Detail <span id="detailN">1</span></b> &nbsp;<span id="detailLabel">Basecamp, system diagram</span></figcaption>
+        </figure>
+      </div>
+
+      <template id="schem-basecamp">
+        <svg viewBox="0 0 560 400" role="img" aria-label="Basecamp system diagram: Garmin data and Telegram messages flow through Redis and Claude into the dashboard">
+          <g class="sc-box"><rect x="20" y="40" width="150" height="56"/><rect x="20" y="172" width="150" height="56"/><rect x="215" y="40" width="130" height="56"/><rect x="215" y="172" width="130" height="56"/><rect x="390" y="96" width="150" height="76"/><rect x="390" y="270" width="150" height="56"/></g>
+          <g class="sc-t">
+            <text x="95" y="66">Garmin watch</text><text x="95" y="84" class="sc-s">activity · sleep · HRV</text>
+            <text x="95" y="198">Telegram bot</text><text x="95" y="216" class="sc-s">plain-English workout</text>
+            <text x="280" y="66">Upstash Redis</text><text x="280" y="84" class="sc-s">tokens · 30 min cache</text>
+            <text x="280" y="198">Claude</text><text x="280" y="216" class="sc-s">parses each workout</text>
+            <text x="465" y="128">Next.js on Vercel</text><text x="465" y="146" class="sc-s">dashboard · /log</text>
+            <text x="465" y="296">Strava-ready text</text><text x="465" y="314" class="sc-s">bot reply</text>
+          </g>
+          <g class="sc-l"><path d="M170 68 H215"/><path d="M170 200 H215"/><path d="M345 68 H368 V120 H390"/><path d="M345 200 H368 V148 H390"/><path d="M465 172 V270"/></g>
+          <g class="sc-a"><path d="M209 64 L215 68 L209 72"/><path d="M209 196 L215 200 L209 204"/><path d="M384 116 L390 120 L384 124"/><path d="M384 144 L390 148 L384 152"/><path d="M461 264 L465 270 L469 264"/></g>
+          <text x="20" y="380" class="sc-n">Private repo · personal health data, so no screenshots</text>
+        </svg>
+      </template>
+      <template id="schem-finance">
+        <svg viewBox="0 0 560 400" role="img" aria-label="Finance tracker system diagram: bank accounts sync through Plaid into Supabase, Claude categorizes, and the dashboard and chat read the result">
+          <g class="sc-box"><rect x="20" y="40" width="140" height="56"/><rect x="205" y="40" width="130" height="56"/><rect x="380" y="40" width="160" height="56"/><rect x="380" y="172" width="160" height="56"/><rect x="205" y="172" width="130" height="56"/><rect x="380" y="290" width="160" height="56"/><rect x="205" y="290" width="130" height="56"/></g>
+          <g class="sc-t">
+            <text x="90" y="66">Banks &amp; cards</text><text x="90" y="84" class="sc-s">CAD accounts</text>
+            <text x="270" y="66">Plaid</text><text x="270" y="84" class="sc-s">sync now</text>
+            <text x="460" y="66">Supabase Postgres</text><text x="460" y="84" class="sc-s">transactions · is_work</text>
+            <text x="460" y="198">Claude</text><text x="460" y="216" class="sc-s">auto-categorize</text>
+            <text x="270" y="198">Needs review</text><text x="270" y="216" class="sc-s">unsure items</text>
+            <text x="460" y="316">Dashboard</text><text x="460" y="334" class="sc-s">money in · money out</text>
+            <text x="270" y="316">Insights chat</text><text x="270" y="334" class="sc-s">ask about spending</text>
+          </g>
+          <g class="sc-l"><path d="M160 68 H205"/><path d="M335 68 H380"/><path d="M460 96 V172"/><path d="M380 200 H335"/><path d="M500 228 V290"/><path d="M420 228 V260 H270 V290"/></g>
+          <g class="sc-a"><path d="M199 64 L205 68 L199 72"/><path d="M374 64 L380 68 L374 72"/><path d="M456 166 L460 172 L464 166"/><path d="M341 196 L335 200 L341 204"/><path d="M496 284 L500 290 L504 284"/><path d="M266 284 L270 290 L274 284"/></g>
+          <text x="20" y="380" class="sc-n">Private repo · real financial data, so no screenshots</text>
+        </svg>
+      </template>
+    </section>
+
+    <!-- SHEET 4 · SPECIFICATIONS & APPROVALS -->
+    <section class="sheet" id="specs" aria-labelledby="specs-h">
+      <h2 class="sheet-title lettered" id="specs-h">Specifications</h2>
+      <dl class="specs">
+        <div><dt>Operations</dt><dd>Process mapping, time studies, pain-point sizing, value–ease prioritization, SOP design and training, change readiness surveys</dd></div>
+        <div><dt>Mechanical design</dt><dd>SolidWorks, Creo Parametric, Autodesk Inventor, GD&amp;T, DFM and DFA, PLM revision control</dd></div>
+        <div><dt>Simulation &amp; analysis</dt><dd>SolidWorks Simulation, ANSYS Mechanical, ANSYS Granta, KISSsoft, root cause and failure analysis, statistical process control</dd></div>
+        <div><dt>Software</dt><dd>Python, SQL, MATLAB, Embedded C, R, JMP, TypeScript, Next.js, Supabase, n8n, Microsoft Graph API</dd></div>
+        <div><dt>Machine learning</dt><dd>CNNs, computer vision and NLP with TensorFlow, OpenCV and scikit-learn; YOLO on embedded hardware</dd></div>
+        <div><dt>Circuits</dt><dd>Integrating sensors, batteries, motors and Arduinos</dd></div>
+      </dl>
+
+      <div class="approvals" id="contact">
+        <figure class="approvals__photo">
+          <img src="images/Profile pic.jpeg" alt="Salih Al-Tak" loading="lazy" decoding="async" width="600" height="600">
+          <figcaption class="view-label"><b>Photo</b> &nbsp;S. Al-Tak</figcaption>
+        </figure>
+        <div class="approvals__grid">
+          <div class="approvals__c approvals__open">
+            <h2 class="approvals__h lettered">Your signature goes here.</h2>
+            <p>Hiring, or want to compare notes on operations, engineering, or a tool you’re building? I read every email.</p>
+            <div class="approvals__links">
+              <a class="cmd cmd--primary" href="mailto:salih.h.altak@gmail.com">salih.h.altak@gmail.com</a>
+              <a class="cmd" href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="cmd" href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a>
+              <a class="cmd" href="Documents/salih_resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="https://www.instagram.com/_salih_saad/" target="_blank" rel="noopener">Instagram</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="js/sheet.js" defer></script>
+  <script src="js/home.js" defer></script>
+  <script type="module" src="js/gear.js"></script>
 </body>
 </html>
-
-<section class="skills2-0-section">
-    <div class="skills2-0-header">
-        <h2>My Skills</h2>
-        <p>A short list of valuable skills I possess.</p>
-        <hr>
-    </div>
-    <div class="skills2-0-grid">
-        <!-- Skill Item 1 -->
-        <div class="skill-item">
-            <img src="Icons/gear.png" alt="Mechanical Design Icon">
-            <h3>Mechanical Design</h3>
-            <p>SolidWorks, Creo Parametric, Autodesk Inventor</p>
-        </div>
-
-        <!-- Skill Item 2 -->
-        <div class="skill-item">
-            <img src="Icons/programming.png" alt="Programming Icon">
-            <h3>Programming Languages</h3>
-            <p>Python, MATLAB, Embedded C, SQL, R, JMP, HTML/CSS/JS</p>
-        </div>
-
-        <!-- Skill Item 3 -->
-        <div class="skill-item">
-            <img src="Icons/ml.png" alt="Machine Learning Icon">
-            <h3>Machine Learning & AI</h3>
-            <p>Deployment of CNNs, Computer Vision, and NLP using TensorFlow, OpenCV, and scikit-learn</p>
-        </div>
-
-        <!-- Skill Item 4 -->
-        <div class="skill-item">
-            <img src="Icons/manu.png" alt="Manufacturing Icon">
-            <h3>Manufacturing</h3>
-            <p>GD&T, DFM & DFA, Failure Analysis, Statistical Process Control</p>
-        </div>
-
-        <!-- Skill Item 5 -->
-        <div class="skill-item">
-            <img src="Icons/sim.png" alt="Simulation Icon">
-            <h3>Simulation</h3>
-            <p>SolidWorks Simulation, Ansys Mechanical</p>
-        </div>
-
-        <!-- Skill Item 6 -->
-        <div class="skill-item">
-            <img src="Icons/circuit.png" alt="Circuits Icon">
-            <h3>Circuits</h3>
-            <p>Analysis for integrating sensors, batteries, motors, and Arduinos</p>
-        </div>
-    </div>
-</section>
-
-
-<section class="contact-section">
-
-    <footer class="contact-footer">
-        
-        <div class="social-links">
-            <a href="https://github.com/dashboard" class="social-link">
-                <img src="Icons/github.svg" alt="github" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-            </a>
-            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                <img src="Icons/email.svg" alt="Email" class="social-icon">
-            </a>
-        </div>
-        <p>Thank you for visiting my website</p>
-    </footer>
-</section>
-

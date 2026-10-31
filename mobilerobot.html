@@ -1,51 +1,60 @@
-<link rel="stylesheet" href="css/styles.css">
-<!-- Navigation Bar -->
-     <!-- Social Media Icons -->
-     <nav class="nav">
-        <div class="nav-content">
-            <a class="nav-item active" href="index.html">ABOUT</a> <!-- Link to the main about page -->
-            <a class="nav-item" href="experience.html">EXPERIENCE</a> <!-- Link to the new Experience page -->
-            <a class="nav-item" href="projects.html">PROJECTS</a> <!-- Link to projects page (if it exists) -->
-        </div>
-    
-        <div class="social-media">
-            <a href="https://github.com/dashboard" class="social-link">
-                <img src="Icons/github.svg" alt="github" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-            </a>
-            <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                <img src="Icons/email.svg" alt="Email" class="social-icon">
-            </a>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile robot · Salih Al-Tak</title>
+  <meta name="description" content="One metre out and back on a linkage-driven propulsion mechanism.">
+  <link rel="icon" href="Icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/osifont.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/sheet.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <script>
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      try { var p = localStorage.getItem("print"); if (p) d.dataset.print = p; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="index">
+    <nav aria-label="Sheets">
+      <ul class="index__sheets">
+        <li><a href="index.html#top"><span>1</span>General arrangement</a></li>
+        <li><a href="index.html#revisions"><span>2</span>Revisions</a></li>
+        <li><a href="index.html#parts" aria-current="true"><span>3</span>Parts list</a></li>
+        <li><a href="index.html#specs"><span>4</span>Specs &amp; contact</a></li>
+      </ul>
     </nav>
-    
+    <div class="index__tools">
+      <div class="print" role="group" aria-label="Print style">
+        <button type="button" data-print-set="vellum" aria-pressed="false">Vellum</button>
+        <button type="button" data-print-set="blueprint" aria-pressed="false">Blueprint</button>
+      </div>
+    </div>
+  </header>
 
-
-    <section class="project-details-section">
-        <!-- Header Section: Project Title and Main Image -->
-        <div class="header-section">
-            <h1 class="project-title">Mobile Robot Design</h1>
-            <div class="main-image-container">
-                <img src="images/Capture.PNG" alt="Mobile Robot Image" class="main-project-image">
-            </div>
+  <main>
+    <article class="sheet dsheet">
+      <header class="dhead">
+        <div>
+          <h1 class="lettered"><span class="balloon__n" aria-hidden="true">8</span>Mobile robot</h1>
+          <p class="dhead__lede">One metre out and back on a linkage-driven propulsion mechanism.</p>
         </div>
-        
-    <!-- Content Section: What, How, Results -->
+        <div class="dhead__meta">
+          <div><small>Type</small>Mechanisms</div>
+          <div class="wide"><small>Stack / process</small>Linkage design · CAD · fabrication</div>
+        </div>
+      </header>
+      <figure class="fig fig--main"><div class="fig__frame"><img src="images/Capture.PNG" alt="Mobile robot" fetchpriority="high" decoding="async"></div><figcaption class="view-label"><b>View 1</b></figcaption></figure>
+      <div class="dbody">
 <div class="content-section">
-    <!-- What Section -->
     <div class="content-block">
         <h2>What</h2>
         <p>
             Modeled and assembled a robot with a complex linkage system that used a propulsion mechanism to complete a predetermined course.
         </p>
     </div>
-
-    <!-- How Section -->
     <div class="content-block">
         <h2>How</h2>
         <p>
@@ -55,8 +64,6 @@
             Programmed an Arduino microcontroller to control the motors' movements through a responsive switch interface.
         </p>
     </div>
-
-    <!-- Results Section -->
     <div class="content-block">
         <h2>Results</h2>
         <p>
@@ -64,39 +71,26 @@
         </p>
     </div>
 </div>
-
-    
-        <!-- Gallery Section: Additional Images -->
         <div class="gallery-section">
-            <img src="images/mb1.PNG" alt="Robot Side View" class="gallery-image">
-            <img src="images/mb2.PNG" alt="Robot Top View" class="gallery-image">
+            <figure class="fig"><div class="fig__frame"><img src="images/mb1.PNG" alt="Mobile robot, view 2" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 2</b></figcaption></figure>
+            <figure class="fig"><div class="fig__frame"><img src="images/mb2.PNG" alt="Mobile robot, view 3" loading="lazy" decoding="async"></div><figcaption class="view-label"><b>View 3</b></figcaption></figure>
         </div>
-    
-        <!-- Footer Section: Back to Projects Button -->
-        <div class="button-container">
-            <a href="projects.html" class="back-button">Back to Projects</a>
-        </div>
-    </section>
-    
+      </div>
 
-    <section class="contact-section">
+      <nav class="dnav" aria-label="Parts">
+        <a class="dnav__prev" href="finance_app.html"><small>Previous · item 7</small><b>Finance app, v1</b></a>
+        <a class="dnav__mid cmd" href="index.html#parts">Parts list</a>
+        <a class="dnav__next" href="snowshovel.html"><small>Next · item 9</small><b>Ergonomic snow shovel</b></a>
+      </nav>
 
-        <footer class="contact-footer">
-            
-            <div class="social-links">
-                <a href="https://github.com/dashboard" class="social-link">
-                    <img src="Icons/github.svg" alt="github" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" class="social-link">
-                    <img src="Icons/linkedin.svg" alt="LinkedIn Icon" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/_salih_saad/" target="_blank" class="social-link">
-                    <img src="Icons/1161953_instagram_icon.png" alt="Instagram Icon" class="social-icon">
-                </a>
-                <a href="mailto:salih.h.altak@gmail.com" class="social-link">
-                    <img src="Icons/email.svg" alt="Email" class="social-icon">
-                </a>
-            </div>
-            <p>Thank you for visiting my website</p>
-        </footer>
-    </section>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Salih Al-Tak · Toronto, ON</span>
+    <span><a href="mailto:salih.h.altak@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/salih-al-tak/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/salooohy" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="js/sheet.js" defer></script>
+</body>
+</html>
